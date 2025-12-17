@@ -1,0 +1,29 @@
+{
+  "name": "clueso-io-clone",
+  "version": "1.0.0",
+  "description": "AI-powered documentation/tutorial generator - records screen, voice, and DOM events to create professional video tutorials",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=server-orchestrator",
+    "dev:python": "cd apps/service-intelligence && uvicorn main:app --reload --port 8000",
+    "dev:frontend": "npm run dev --workspace=frontend-platform",
+    "build:backend": "npm run build --workspace=server-orchestrator",
+    "build:frontend": "npm run build --workspace=frontend-platform",
+    "build:extension": "npm run build --workspace=extension-capture"
+  },
+  "keywords": [
+    "screen-recording",
+    "tutorial-generator",
+    "ai",
+    "chrome-extension",
+    "deepgram",
+    "elevenlabs",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT"
+}

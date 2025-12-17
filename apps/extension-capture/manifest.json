@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Clueso.io Clone - Screen Recorder",
+  "version": "1.0.0",
+  "description": "Record your screen, voice, and DOM interactions to generate AI-powered tutorials",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabCapture",
+    "tabs",
+    "offscreen",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Open Clueso Recorder"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*", "capture-injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
